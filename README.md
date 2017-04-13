@@ -18,7 +18,7 @@
 npm install gulp -g
 ```
 
-This command will install gulp globally on your local machine.
+This command will install Gulp globally on your local machine.
 
 6. Type:
 
