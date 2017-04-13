@@ -1,0 +1,17 @@
+.character-rows-enter {
+	transition: all 0.5s;
+	transform: translateX(-40px); 
+
+	&.character-rows-enter-active{
+		transform: translateX(0px); 
+	}
+}
+
+.character-rows-leave {
+	transition: all 0.1s;
+	opacity: 1; 
+
+	&.character-rows-leave-active{
+		opacity: 1;
+	}
+}

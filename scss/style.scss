@@ -1,0 +1,458 @@
+@charset "utf-8";html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}template,[hidden]{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,select,textarea{font:inherit;margin:0}optgroup{font-weight:bold}button,input{overflow:visible}button,select{text-transform:none}button,html [type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-cancel-button,[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:0.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+
+// Import all partials
+@import "./partials/animations.scss";
+
+$dark-gray: #262626;
+$dark-purple: #363247;
+$light-purple: #3f3b53;
+$dark-blue: #2e324a;
+$light-blue: #363b57;
+$dark-yellow: #e5af45;
+$yellow: #ffc34d;
+$white: #ffffff;
+$blue: #3964c3;
+$coral: coral;
+
+$montserrat: 'Montserrat', sans-serif;
+$lato: 'Lato', sans-serif;
+$amatic: 'Amatic SC', cursive;
+
+// used for @extend
+.yellow-field {
+  display: block;
+  box-sizing: border-box;
+  width: 200px;
+  margin: 0 auto;
+  padding: 8px 20px;
+  border: 2px solid $yellow;
+}
+
+// used for @extend
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+* {
+  outline: 0;
+}
+
+body {
+  background: $dark-gray;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.hidden {
+  display: none;
+}
+
+.app-container {
+  position: absolute;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: $white;
+  font-family: $lato;
+}
+
+.start-screen {
+  position: relative;
+  background: url("../img/start-screen.png") no-repeat;
+  width: 1200px;
+  height: 635px;
+  color: $white;
+  font-family: $lato;
+
+  .start-app-button-container {
+    position: relative;
+    top: 85%;
+
+    .start-app-button {
+      display: block;
+      box-sizing: border-box;
+      width: 200px;
+      margin: 0 auto;
+      padding: 8px 20px;
+      border: 2px solid $yellow;
+      border-radius: 18px;
+      background: transparent;
+      font-family: $montserrat;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: $white;
+      cursor: pointer;
+
+      &:hover {
+        background: $dark-blue;
+      }
+    }
+  }
+}
+
+.not-found-screen {
+  position: relative;
+  background: url("../img/not-found-screen.png") no-repeat;
+  width: 1200px;
+  height: 635px;
+
+  .not-found-message {
+    position: relative;
+    top: 22%;
+    font-family: $montserrat;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+  }
+}
+
+.app-block {
+  float: left;
+  width: 400px;
+  height: 635px;
+  transition: transform 0.2s ease;
+
+  &.purple-block {
+    .block-header {
+      background: $dark-purple;
+    }
+    .block-body {
+      background: $light-purple;
+    }
+  }
+
+  &.blue-block {
+    .block-header {
+      background: $dark-blue;
+    }
+    .block-body {
+      background: $light-blue;
+    }
+  }
+
+  .block-header {
+    height: 60px;
+    text-transform: uppercase;
+
+    h2 {
+      line-height: 60px;
+      font-family: $montserrat;
+      font-size: 22px;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+
+  &.active,
+  &:hover {
+    transform: scale(1.02) translateY(-5px);
+  }
+
+  .block-body {
+    height: calc(100% - 60px);
+
+    .create-new-button-container {
+      padding-top: 60px;
+
+      .create-new-button {
+        @extend .yellow-field;
+        border-radius: 18px;
+        background: $yellow;
+        color: $light-purple;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+          background: $dark-yellow;
+          border-color: $dark-yellow;
+        }
+      }
+    }
+    
+    .character-row {
+      padding-top: 30px;
+      width: 300px;
+      height: 39px;
+      margin: 0 auto;
+      
+      .avatar {
+        float: left;
+        width: 39px;
+        height: 100%;
+        border-radius: 50%;
+        background: $white;
+      }
+
+      .character-details {
+        float: left;
+        margin-left: 20px;
+        width: calc(100% - 59px);
+        height: 100%;
+      }
+
+      .character-name {
+        float: left;
+        width: calc(100% - 84px);
+        line-height: 39px;
+        @extend .ellipsis;
+      }
+
+      .actions {
+        float: right;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        
+        i {
+          float: left;
+          margin-left: 10px;
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+          border: none;
+          transition: transform 0.2s ease;
+
+          &:hover {
+            transform: translateY(-4px);
+          }
+          
+          &.edit {
+            background: url("../img/edit.png") center no-repeat;
+          }
+          &.delete {
+            background: url("../img/delete.png") center no-repeat;
+          }
+          &.play {
+            background: url("../img/play.png") center no-repeat;
+          }
+
+        }
+      }
+    }
+
+    .form-element-container {
+      padding-top: 30px;
+
+      &:first-child {
+        padding-top: 60px;
+      }
+
+      input[type="text"]::placeholder,
+      textarea::placeholder {
+        color: $white;
+        opacity: 1;
+      }
+
+      input[type="text"].error::placeholder,
+      textarea.error::placeholder {
+        color: $coral;
+      }
+
+      input[type="text"].error,
+      textarea.error {
+        border-color: $coral;
+      }
+      
+      input[type="text"],
+      textarea,
+      .drop-menu {
+        @extend .yellow-field;
+        border-radius: 18px;
+        background: none;
+        color: $white;
+
+        &:hover {
+          background: $dark-blue;
+        }
+      }
+      
+      textarea {
+        height: 110px;
+      }
+
+      .drop-menu {
+        transition: all 0.3s;
+
+        &.active {
+          border-radius: 18px 18px 0 0;
+          background: $dark-blue;
+        }
+
+        &:hover {
+          background: $dark-blue;
+        }
+
+        &.active .select i {
+          transform: rotate(180deg);
+        }
+
+        .select {
+          display: block;
+          height: 19px;
+          cursor: pointer;
+
+          .chevron-down {
+            float: right;
+            width: 15px;
+            height: 19px;
+            background: url("../img/chevron-down.png") center no-repeat;
+            transition: all .5s ease;
+            cursor: pointer;
+          }
+        }
+
+        .drop-down {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          margin-top: 10px;
+          transition: all 0.3s;
+          display: none;
+          z-index: 1;
+
+          li {
+            @extend .yellow-field;
+            border-top: none;
+            background: $light-blue;
+            cursor: pointer;
+            
+            &:last-child {
+              border-radius: 0 0 18px 18px;
+            }
+
+            &:hover {
+              background-color: $blue;
+            }
+          }
+        }
+
+        &.active .drop-down {
+          display: block;
+        }
+      }
+    }
+
+    .speach-bubble-container {
+      padding-top: 60px;
+
+      .speach-bubble {
+        @extend .yellow-field;
+        position: relative;
+        height: 110px;
+        border-radius: 18px;
+        background: none;
+        word-wrap: break-word;
+        font-family: $amatic;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 26px;
+        color: $white;
+
+        &:hover {
+          background: $dark-purple;
+          cursor: pointer;
+
+          &::after {
+          border-color: $dark-purple transparent transparent $dark-purple;
+          }
+        }
+
+        &::before {
+          content: ' ';
+          position: absolute;
+          width: 0;
+          height: 0;
+          left: 140px;
+          top: 106px;
+          border: 10px solid;
+          border-color: $yellow transparent transparent $yellow;
+        }
+
+        &::after {
+          content: ' ';
+          position: absolute;
+          width: 0;
+          height: 0;
+          left: 142px;
+          top: 106px;
+          border: 8px solid;
+          border-color: $light-purple transparent transparent $light-purple;
+        }
+      }
+    }
+
+    .character-preview-container {
+      padding-top: 30px;
+      
+      .character-preview {
+        position: relative;
+        width: 200px;
+        height: 219px;
+        margin: 0 auto;
+
+        .default-body,
+        .head,
+        .arms-and-torso,
+        .legs,
+        .feet {
+          background: url("../img/sprite.png") no-repeat;
+          position: absolute;
+          width: 200px;
+          height: 219px;
+          overflow: hidden;
+          text-indent: -9999px;
+          text-align: left;
+        }
+
+        .default-body {
+          z-index: 1;
+        }
+        .head {
+          z-index: 5;
+        }
+        .arms-and-torso {
+          z-index: 4;
+        }
+        .legs {
+          z-index: 3;
+        }
+        .feet {
+          z-index: 2;
+        }
+      }
+
+      .character-name {
+        padding-top: 8px;
+        width: 200px;
+        height: 19px;
+        margin: 0 auto;
+        text-align: center;
+        @extend .ellipsis;
+      }
+    }
+
+    .save-button-container {
+      padding-top: 30px;
+
+      .save-button {
+        @extend .yellow-field;
+        border-radius: 18px;
+        background: $yellow;
+        color: $light-purple;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+          background: $dark-yellow;
+          border-color: $dark-yellow;
+        }
+      }
+    }
+  }
+}
