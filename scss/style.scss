@@ -61,7 +61,7 @@ body {
 
 .start-screen {
   position: relative;
-  background: url("../img/start-screen.png") no-repeat;
+  background: url("/build/img/start-screen.png") no-repeat;
   width: 1200px;
   height: 635px;
   color: $white;
@@ -96,7 +96,7 @@ body {
 
 .not-found-screen {
   position: relative;
-  background: url("../img/not-found-screen.png") no-repeat;
+  background: url("/build/img/not-found-screen.png") no-repeat;
   width: 1200px;
   height: 635px;
 
@@ -223,13 +223,13 @@ body {
           }
           
           &.edit {
-            background: url("../img/edit.png") center no-repeat;
+            background: url("/build/img/edit.png") center no-repeat;
           }
           &.delete {
-            background: url("../img/delete.png") center no-repeat;
+            background: url("/build/img/delete.png") center no-repeat;
           }
           &.play {
-            background: url("../img/play.png") center no-repeat;
+            background: url("/build/img/play.png") center no-repeat;
           }
 
         }
@@ -301,7 +301,7 @@ body {
             float: right;
             width: 15px;
             height: 19px;
-            background: url("../img/chevron-down.png") center no-repeat;
+            background: url("/build/img/chevron-down.png") center no-repeat;
             transition: all .5s ease;
             cursor: pointer;
           }
@@ -401,7 +401,7 @@ body {
         .arms-and-torso,
         .legs,
         .feet {
-          background: url("../img/sprite.png") no-repeat;
+          background: url("/build/img/sprite.png") no-repeat;
           position: absolute;
           width: 200px;
           height: 219px;
