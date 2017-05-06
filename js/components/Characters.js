@@ -13,7 +13,7 @@ var Characters = React.createClass({
     var head = character.head || 'default-head';
     var avatar = head.replace('head', 'avatar');
     var avatarStyle = {
-        backgroundImage: 'url(../img/' + avatar + '.png)'
+        backgroundImage: 'url(/build/img/' + avatar + '.png)'
     }
     return (
       <div className="character-row" key={key}>
