@@ -36,6 +36,6 @@ gulp
 
 This command will run Gulp and it will automatically open the project in your browser.
 
-You can also checkout the <b>[Demo](http://react-characters.byethost7.com/)</b>.
+You can also checkout the <b>[Demo](http://react-characters.byethost8.com/)</b>.
 
 Have fun! :)
